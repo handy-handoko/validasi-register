@@ -13,3 +13,11 @@ $stmt = $dbCon->prepare($sql);
 $stmt->execute(array($uname));
 
 $number_of_rows = $stmt->fetchColumn();
+
+if($number_of_rows > 0)
+	$result = false;
+else
+	$result = true;
+
+header('Content-Type: application/json');
+echo json_encode($result);
