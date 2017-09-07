@@ -15,5 +15,21 @@
 	<!-- script jquery dan jquery validate -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+	<script type="text/javascript">
+		$( "#validate_form" ).validate({ // #validate_form harus sama dengan id pada tag form
+			rules: {
+				username: { //username harus disesuaikan dengan atribute "name" dari field yang akan di validasi
+					required: true,
+					remote: "validate.php"
+				}
+			},
+			messages: {
+				username: {
+					required: "Masukkan username", //pesan ini muncul apabila username tidak dimasukkan
+					remote: "Username sudah ada" //pesan ini muncul apabila username sudah ada sesuai yang diinput di database
+				}
+			}
+		});
+	</script>
 </body>
 </html>
