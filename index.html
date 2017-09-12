@@ -20,13 +20,21 @@
 			rules: {
 				username: { //username harus disesuaikan dengan atribute "name" dari field yang akan di validasi
 					required: true,
-					remote: "validate.php"
+					remote: "validasiusername.php"
+				},
+				email: { //email harus disesuaikan dengan atribute "name" dari field yang akan di validasi
+					required: true,
+					remote: "validasiemail.php"
 				}
 			},
 			messages: {
 				username: {
 					required: "Masukkan username", //pesan ini muncul apabila username tidak dimasukkan
 					remote: "Username sudah ada" //pesan ini muncul apabila username sudah ada sesuai yang diinput di database
+				},
+				email: {
+					required: "Masukkan email", //pesan ini muncul apabila email tidak dimasukkan
+					remote: "Email sudah ada" //pesan ini muncul apabila email sudah ada sesuai yang diinput di database
 				}
 			}
 		});
