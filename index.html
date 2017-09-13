@@ -10,6 +10,8 @@
 		<input type="password" name="password" placeholder="password"/><br/>
 		<input type="password" name="retypepassword" placeholder="ulangi password"/><br/>
 		<input type="email" name="email" placeholder="email"/><br/>
+		<label for="term">Untuk melanjutkan, anda harus membaca term and condition</label><br/>
+		<input type="checkbox" name="term" id="term"/><br/>
 		<input type="submit">
 	</form>
 
@@ -33,6 +35,9 @@
 					required: true,
 					email: true,
 					remote: "validasiemail.php"
+				},
+				term: {
+					required: true
 				}
 			},
 			messages: {
@@ -50,6 +55,9 @@
 					required: "Masukkan email", //pesan ini muncul apabila email tidak dimasukkan
 					email: "Email tidak valid",
 					remote: "Email sudah ada" //pesan ini muncul apabila email sudah ada sesuai yang diinput di database
+				},
+				term: {
+					required: "Anda harus membaca dan setuju dengan persyaratan"
 				}
 			}
 		});
