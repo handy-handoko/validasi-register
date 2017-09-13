@@ -31,6 +31,7 @@
 				},
 				email: { //email harus disesuaikan dengan atribute "name" dari field yang akan di validasi
 					required: true,
+					email: true,
 					remote: "validasiemail.php"
 				}
 			},
@@ -47,6 +48,7 @@
 				},
 				email: {
 					required: "Masukkan email", //pesan ini muncul apabila email tidak dimasukkan
+					email: "Email tidak valid",
 					remote: "Email sudah ada" //pesan ini muncul apabila email sudah ada sesuai yang diinput di database
 				}
 			}
