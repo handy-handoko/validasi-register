@@ -8,6 +8,7 @@
 	<form id="validate_form">
 		<input type="text" name="username" placeholder="username" /><br/>
 		<input type="password" name="password" placeholder="password"/><br/>
+		<input type="password" name="retypepassword" placeholder="ulangi password"/><br/>
 		<input type="email" name="email" placeholder="email"/><br/>
 		<input type="submit">
 	</form>
@@ -22,6 +23,12 @@
 					required: true,
 					remote: "validasiusername.php"
 				},
+				password: {
+					required: true,
+				},
+				retypepassword: {
+					equalTo : "password"
+				},
 				email: { //email harus disesuaikan dengan atribute "name" dari field yang akan di validasi
 					required: true,
 					remote: "validasiemail.php"
@@ -31,6 +38,12 @@
 				username: {
 					required: "Masukkan username", //pesan ini muncul apabila username tidak dimasukkan
 					remote: "Username sudah ada" //pesan ini muncul apabila username sudah ada sesuai yang diinput di database
+				},
+				password: {
+					required: "Masukkan password"
+				},
+				retypepassword: {
+					equalTo : "password tidak sama"
 				},
 				email: {
 					required: "Masukkan email", //pesan ini muncul apabila email tidak dimasukkan
